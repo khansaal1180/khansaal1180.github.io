@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Makanan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fffaf0; /* cream base */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000; /* maroon */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .food-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .food-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .food-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .food-card .info {
+            padding: 15px;
+            text-align: center;
+        }
+        .food-card .info h3 {
+            margin: 0;
+            color: #800000;
+        }
+        .food-card .info p {
+            margin: 8px 0 0;
+            color: #555;
+        }
+        .add-to-cart {
+            display: inline-block;
+            background-color: #ff6f61; /* bright accent */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        .add-to-cart:hover {
+            background-color: #e85c50;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Aneka Makanan Lezat</header>
+    <div class="food-container" id="foodContainer"></div>
+
+    <script>
+        const foods = [
+            { name: "Nasi Goreng Spesial", img: "https://source.unsplash.com/400x300/?friedrice", price: "Rp 25.000" },
+            { name: "Bakso Sapi", img: "https://source.unsplash.com/400x300/?meatball", price: "Rp 20.000" },
+            { name: "Sate Ayam", img: "https://source.unsplash.com/400x300/?satay", price: "Rp 22.000" },
+            { name: "Mie Ayam", img: "https://source.unsplash.com/400x300/?noodles", price: "Rp 18.000" },
+            { name: "Es Teh Manis", img: "https://source.unsplash.com/400x300/?icedtea", price: "Rp 8.000" },
+            { name: "Kue Lapis", img: "https://source.unsplash.com/400x300/?cake", price: "Rp 15.000" }
+        ];
+
+        const foodContainer = document.getElementById("foodContainer");
+
+        foods.forEach((food, index) => {
+            const card = document.createElement("div");
+            card.className = "food-card";
+            card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+            card.innerHTML = `
+                <img src="${food.img}" alt="${food.name}">
+                <div class="info">
+                    <h3>${food.name}</h3>
+                    <p>${food.price}</p>
+                    <a href="#" class="add-to-cart">Tambah ke Keranjang</a>
+                </div>
+            `;
+            foodContainer.appendChild(card);
+        });
+    </script>
+</body>
+</html>
