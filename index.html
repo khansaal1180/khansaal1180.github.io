@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Makanan</title>
+    <title>SeafoodKanal’s</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -12,7 +12,7 @@
             padding: 0;
         }
         header {
-            background-color: #800000; /* maroon */
+            background-color:#00BFFF; /* maroon */
             color: white;
             text-align: center;
             padding: 1rem 0;
@@ -49,7 +49,7 @@
         }
         .food-card .info h3 {
             margin: 0;
-            color: #800000;
+            color: #FFD93D;
         }
         .food-card .info p {
             margin: 8px 0 0;
@@ -67,7 +67,7 @@
             transition: background-color 0.3s ease;
         }
         .add-to-cart:hover {
-            background-color: #e85c50;
+            background-color:	#FF7F50;
         }
         @keyframes fadeInUp {
             from {
@@ -82,17 +82,17 @@
     </style>
 </head>
 <body>
-    <header>Aneka Makanan Lezat</header>
+    <header>SeafoodKanal’s</header>
     <div class="food-container" id="foodContainer"></div>
 
     <script>
         const foods = [
-            { name: "Nasi Goreng Spesial", img: "https://source.unsplash.com/400x300/?friedrice", price: "Rp 25.000" },
-            { name: "Bakso Sapi", img: "https://source.unsplash.com/400x300/?meatball", price: "Rp 20.000" },
-            { name: "Sate Ayam", img: "https://source.unsplash.com/400x300/?satay", price: "Rp 22.000" },
-            { name: "Mie Ayam", img: "https://source.unsplash.com/400x300/?noodles", price: "Rp 18.000" },
-            { name: "Es Teh Manis", img: "https://source.unsplash.com/400x300/?icedtea", price: "Rp 8.000" },
-            { name: "Kue Lapis", img: "https://source.unsplash.com/400x300/?cake", price: "Rp 15.000" }
+            { name: "Kepiting Saus Padang 🦀 "Kepiting segar dengan saus pedas manis khas Padang, img: "https://source.unsplash.com/400x300/?friedricehttps://pin.it/5bpSvFCWc", price: "💰 Rp 85.000 / porsi" },
+            { name: "Udang Bakar Madu 🍤"Udang besar dibakar dengan olesan madu dan bawang putih, img: "https://pin.it/2rHekaHrE", price: "💰 Rp 65.000 / porsi" },
+            { name: "Ikan Bakar Jimbaran 🐟"Ikan laut segar dengan bumbu khas Bali, img: "https://pin.it/52lKABIUd", price: "💰 Rp 70.000 / ekor (±500gr)" },
+            { name: "Cumi Goreng Tepung 🦑"Cumi renyah dibalut tepung crispy, img: "https://pin.it/3Fp5Mm1CJ", price: "💰 Rp 55.000 / porsi" },
+            { name: "Kerang Hijau Saus Tiram 🐚"Kerang hijau dengan saus tiram gurih manis, img: "https://pin.it/4HuDaVsC8", price: "💰 Rp 50.000 / porsi" },
+            
         ];
 
         const foodContainer = document.getElementById("foodContainer");
