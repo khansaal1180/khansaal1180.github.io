@@ -1,116 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeafoodKanal’s</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #fffaf0; /* FloralWhite */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color:#00BFFF; /* Sky Blue*/
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-        .food-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .food-card {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transform: scale(1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .food-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .food-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .food-card .info {
-            padding: 15px;
-            text-align: center;
-        }
-        .food-card .info h3 {
-            margin: 0;
-            color: #FFD93D;
-        }
-        .food-card .info p {
-            margin: 8px 0 0;
-            color: #555;
-        }
-        .add-to-cart {
-            display: inline-block;
-            background-color: #FFD93D; /* medium-light shade */
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin-top: 10px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease;
-        }
-        .add-to-cart:hover {
-            background-color:	#FF7F50;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>SeafoodKanal’s</header>
-    <div class="food-container" id="foodContainer"></div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seafood Kanal's</title>
+<style>
+:root {
+    --biru-laut: #0077B6;
+    --kuning-soft: #FFD60A;
+    --oren-soft: #FFA45B;
+    --putih: #fff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: var(--putih); color: #333; overflow-x: hidden; }
+header {
+    background: var(--biru-laut);
+    color: var(--putih);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header h1 { font-size: 1.8rem; }
+nav a {
+    color: var(--putih); text-decoration: none; margin-left: 20px;
+    font-weight: bold; transition: 0.3s;
+}
+nav a:hover { color: var(--kuning-soft); }
 
-    <script>
-        const foods = [
-            { name: "Kepiting Saus Padang 🦀 "Kepiting segar dengan saus pedas manis khas Padang, img: "https://source.unsplash.com/400x300/?friedricehttps://pin.it/5bpSvFCWc", price: "💰 Rp 85.000 / porsi" },
-            { name: "Udang Bakar Madu 🍤"Udang besar dibakar dengan olesan madu dan bawang putih, img: "https://pin.it/2rHekaHrE", price: "💰 Rp 65.000 / porsi" },
-            { name: "Ikan Bakar Jimbaran 🐟"Ikan laut segar dengan bumbu khas Bali, img: "https://pin.it/52lKABIUd", price: "💰 Rp 70.000 / ekor (±500gr)" },
-            { name: "Cumi Goreng Tepung 🦑"Cumi renyah dibalut tepung crispy, img: "https://pin.it/3Fp5Mm1CJ", price: "💰 Rp 55.000 / porsi" },
-            { name: "Kerang Hijau Saus Tiram 🐚"Kerang hijau dengan saus tiram gurih manis, img: "https://pin.it/4HuDaVsC8", price: "💰 Rp 50.000 / porsi" },
-            
-        ];
+/* Slider */
+.slider { position: relative; overflow: hidden; height: 450px; }
+.slides { display: flex; transition: transform 1s ease-in-out; }
+.slides img { width: 100%; object-fit: cover; }
 
-        const foodContainer = document.getElementById("foodContainer");
+/* Menu */
+.menu {
+    padding: 2rem;
+    display: gr
 
-        foods.forEach((food, index) => {
-            const card = document.createElement("div");
-            card.className = "food-card";
-            card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
-            card.innerHTML = `
-                <img src="${food.img}" alt="${food.name}">
-                <div class="info">
-                    <h3>${food.name}</h3>
-                    <p>${food.price}</p>
-                    <a href="#" class="add-to-cart">Tambah ke Keranjang</a>
-                </div>
-            `;
-            foodContainer.appendChild(card);
-        });
-    </script>
-</body>
-</html>
+       
+          
+       
+          
+           
